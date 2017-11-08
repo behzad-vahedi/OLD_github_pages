@@ -208,7 +208,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-border-white,.w3-hover-border-white:hover{border-color:#fff!important}
 .w3-border-black,.w3-hover-border-black:hover{border-color:#000!important}
 .w3-border-grey,.w3-hover-border-grey:hover,.w3-border-gray,.w3-hover-border-gray:hover{border-color:#bbb!important}
-.behzad-row{margin-right:-15px;margin-left:-15px}
+.behzad-row{margin-right:-15px;margin-left:-15px;clear: both;}
 .behzad-col-sm-4{position:relative;min-height:1px;padding-right:15px;padding-left:15px}
 .behzad-col-sm-4{width:50%; float: left;}
 .img-thumbnail{display:inline-block;max-width:100%;height:auto;padding:4px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px}
