@@ -1,316 +1,700 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come after these tags -->
+
+    <!-- meta tags -->
+    <meta name="keywords" content="GIS, GIS Developer, spatial data, data scientist, Developer"/>
+    <meta name="author" content="Behzad Vahedi">
+    <meta property="og:title" content="Behzad Vahedi" />
+    <meta property="dc:creator" content="Behzad Vahedi" />
+    <meta name="description" content="Behzad Vahedi is a PhD student in GIScience at University of California Santa Barbara. He is a graduate student researcher and works in Center for Spatial Studies, UCSB. He holds a bachelor degree in Geodesy and Geomatics Engineering, and a Master of Science degree in GIS engineering.">
+    <meta property="og:description" content="Behzad Vahedi is a PhD student in GIScience at University of California Santa Barbara. He is a graduate student researcher and works in Center for Spatial Studies, UCSB. He holds a bachelor degree in Geodesy and Geomatics Engineering, and a Master of Science degree in GIS engineering.">
+
+
+    <!-- site title -->
+    <title>Behzad Vahedi | Personal Website</title>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.js"></script>
+
+    <!-- favicons using http://realfavicongenerator.net/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="favicon/manifest.json">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-<title>Behzad Vahedi</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:200,300,300i,400,700" rel="stylesheet">
 
-<meta name="description" content="Behzad Vahedi is a PhD student in GIScience at University of California Santa Barbara. He is a graduate student researcher and works in Center for Spatial Studies, UCSB. He holds a bachelor degree in Geodesy and Geomatics Engineering, and a Master of Science degree in GIS engineering.">
-<meta property="og:description" content="Behzad Vahedi is a PhD student in GIScience at University of California Santa Barbara. He is a graduate student researcher and works in Center for Spatial Studies, UCSB. He holds a bachelor degree in Geodesy and Geomatics Engineering, and a Master of Science degree in GIS engineering.">
-<meta property="og:title" content="Behzad Vahedi" />
-<meta property="dc:creator" content="Behzad Vahedi" />
-<meta charset="UTF-8">
-<link rel="stylesheet" href="w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-<style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-</style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 
+    <!-- Pretty Photo -->
+    <link rel="stylesheet" href="css/prettyPhoto.css"/>
 
-<style>
-.projectPanel
-{
-  margin: 20px 10px 20px 0;
-  padding: 5px 5px 10px 5px;
-}
-.round {
-  border-radius: 5px;
-}
-</style>
-<body class="w3-white">
+    <!-- Flickity -->
+    <link rel="stylesheet" href="css/flickity.css"/>
 
-  <!-- Icon Bar (Sidebar - hidden on small screens) -->
-  <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center w3-blue">
-    <!-- Avatar image in top left corner -->
-    <!-- <img src="images/ucsb-wordmark-blue.svg" style="width:100%" alt="Behzad Vahedi"> -->
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-blue w3-hover-white">
-      <i class="fa fa-home w3-xxlarge"></i>
-      <p>Home</p>
-    </a>
-    <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-blue w3-hover-white">
-      <i class="fa fa-user w3-xxlarge"></i>
-      <p>About</p>
-    </a>
-    <a href="#research" class="w3-bar-item w3-button w3-padding-large w3-blue w3-hover-white">
-      <i class="fa fa-book w3-xxlarge"></i>
-      <p>Research</p>
-    </a>
-    <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-blue w3-hover-white">
-      <i class="fa fa-code w3-xxlarge"></i>
-      <p>Projects</p>
-    </a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-blue w3-hover-white">
-      <i class="fa fa-envelope w3-xxlarge"></i>
-      <p>Contact</p>
-    </a>
-  </nav>
+    <!-- animate.css -->
+    <link rel="stylesheet" href="css/animate.css"/>
 
-  <!-- Navbar on small screens (Hidden on medium and large screens) -->
-  <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="#" class="w3-bar-item w3-button" style="width:25% !important">Home</a>
-      <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">About</a>
-      <a href="#research" class="w3-bar-item w3-button" style="width:25% !important">Resarch</a>
-      <a href="#research" class="w3-bar-item w3-button" style="width:25% !important">Projects</a>
-      <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">Contact</a>
-    </div>
-  </div>
+    <!-- Skills bar -->
+    <link rel="stylesheet" href="css/skills-bar.css"/>
 
-  <!-- Page Content -->
-  <div class="" id="main">
-    <!-- Header/Home -->
-    <header class="w3-container w3-padding-32 w3-center w3-yellow " id="home">
-    <!--   <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-        <img src="images/ucsbseal-color-rgb.svg" style="width:10%;height: 5%">
-        <img src="images/Geography-Logo.gif" style="width:20%; height: 10%">
-      </div>
-    </div> -->
+    <!-- custom.css - the styling for this template -->
+    <link rel="stylesheet" href="css/custom.css">
 
-      <img src="images/ucsbseal-color-rgb.svg" class="w3-right w3-image" width="10%" height="5%">
-      <div class="clearfix w3-center">
-      <h1 class="w3-jumbo w3-text-blue"><span class="w3-hide-small"></span> Behzad Vahedi</h1>
-      <p class="w3-text-blue">Geospatial Data Scientist and a fan of spatial things!</p>
-      </div>
-      <img src="images/Geography-Logo.gif" class="w3-right w3-image" width="20%" height="10%">
-    </header>
+    <!-- Modernizr -->
+    <script src="js/modernizr-custom.js"></script>
 
+    <!-- Leaflet Map -->
+    <script language="javascript" type="text/javascript" src="js/map.js"></script>
 
-    <!-- About Section -->
-    <div class="w3-content w3-justify w3-text-blue w3-padding-64" id="about">
-      <h2 class="w3-text-blue">About Me</h2>
-      <hr style="width:300px; border-color: #ffce34;  border: 2px solid #ffce34 ">
-      <p>
-        <img src="images/behzad.jpg" alt="boy" class="w3-image" width="426" height="285" style="float: right; margin-left: 25px;">
-       Behzad Vahedi is a GIScientist with engineering background and experience in GIS development.
-        He is a PhD student in GIScience at University of California Santa Barbara. As a graduate student researcher, he work in <a href="http://spatial.ucsb.edu/">Center for Spatial Studies</a> at UCSB. Behzad holds a bachelor degree in Geodesy and Geomatics Engineering, and a Master of Science degree in GIS engineering, both from <a href="http://en.kntu.ac.ir/">K.N.Toosi University of Technology</a>, Tehran, Iran.  At UCSB Geography, he studies how to ask and answer spatio-temporal questions under supervision of Professor <a href="http://geog.ucsb.edu/~kuhn/"> Werner Kuhn</a>, and his goal is to facilitate <a href="https://link.springer.com/chapter/10.1007/978-3-319-33783-8_3"><i> Question-Based Spqtial Computing</i></a>.
-        His focus is on <i>Field</i> as a <i>Core Concept of Spatial Information</i> and he develops Core Computations on fields by extending Map Algebra operations from rastre to field. He is always passionate to develop GIS services and software, provide GIS solutions, and to work on challenging and real world spatial problems.
-      </p>
-      <p> If you want to know more about the projects he has done, check his <a href="https://github.com/behzad-vahedi">Github</a>, and feel free to send him an email if you want to contact. </p>
+</head>
 
+<body onload="init();">
 
+<!-- status spinner showing while loading the page -->
+<div id="preloader"></div>
 
-
-      <br><h3 class=" w3-text-blue">Education</h3>
-      <hr style="width:300px; border-color: #ffce34;  border: 2px solid #ffce34 " >
-      <div>
-        <ul>
-          <li>
-            PhD   | Geographical Information Science | University of California Santa Barbara | in progress
-          </li>
-          <li>
-            M.Sc. | GIS Engineering | K.N.Toosi University of technology, Tehran, Iran | 2015
-          </li>
-          <li>
-            B.S.   | Geodesy and Geomatics Engineering | K.N.Toosi University of Technology, Tehran, Iran | 2012
-          </li>
-        </ul>
-      </div>
-
-
-
-
-
-
-
-      <br><h3 class=" w3-text-blue">My Skills</h3>
-      <hr style="width:200px; border-color: #ffce34;  border: 2px solid #ffce34" >
-      <p class="w3-wide">GIS</p>
-      <div class="w3-blue" style="width: 50%">
-        <div class="w3-yellow" style="height:28px;width:90%"></div>
-      </div>
-      <p>
-        Extensive experience in: ArcGIS stack, Oracle Spatial<br>
-        Experience in: ArcGIS, QGIS, Geoserver, R
-      </p>
-      <br>
-      <p class="w3-wide">Programming</p>
-      <div class="w3-blue" style="width: 50%">
-        <div class="w3-yellow" style="height:28px;width:85%"></div>
-      </div>
-      <p>
-        Extensive experience in: Java, Python<br>
-        Experience in: Matlab, C#, HTML and web services (WMS, WPS, WFS), XML
-      </p>
-      <br>
-      <p class="w3-wide">Remote Sensing</p>
-      <div class="w3-blue" style="width: 50%">
-        <div class="w3-yellow" style="height:28px;width:75%"></div>
-      </div>
-      <p>familiar with: ENVI, ILWIS, IDRISI</p>
-
-      <br>
-      <p class="w3-wide">Data Science</p>
-      <div class="w3-blue" style="width: 50%">
-        <div class="w3-yellow" style="height:28px;width:75%"></div>
-      </div>
-      <p>familiar with: ENVI, ILWIS, IDRISI</p>
-
-      <br>
-      <a href="Behzad Vahedi-academic CV.pdf" style="text-decoration:none" download="">
-        <button class="w3-button w3-blue w3-padding-large w3-section">
-        <i class="fa fa-download"></i>Download Resume
-      </button></a>
-
-      <!-- End About Section -->
-    </div>
-
-    <!-- Research Section -->
-    <div class="w3-padding-64 w3-content" id="research">
-      <h2 class="w3-text-blue">Research</h2>
-      <hr style="width:200px; border-color: #ffce34;  border: 2px solid #ffce34">
-      <!-- <h3 class="w3-text-blue">Research Peojects</h3> -->
-        <!-- <p>I am currently woking on </p> -->
-
-        <h3 class="w3-text-blue">Publications</h3>
-          <div>
-            <ul>
-              <li>
-                 Vahedi, B., Kuhn, W., &#38; Ballatore, A. (2016). <a href="https://link.springer.com/chapter/10.1007/978-3-319-33783-8_3">Question-based spatial computing—A case study</a>. In Geospatial Data in a Changing World (pp. 37-50). Springer International Publishing.
-              </li>
-              <li>
-                 Allen, C., Hervey, T., Lafia, S., Phillips, D. W., Vahedi, B., &#38; Kuhn, W. (2016).<a href="http://link.springer.com/chapter/10.1007/978-3-319-45738-3_17"> Exploring the Notion of Spatial Lenses</a>. In International Conference on Geographic Information Science (pp. 259-274). Springer International Publishing.
-              </li>
-              <li>
-                Vahedi, B., &#38; Alesheikh, A. A. (2016).<a href="http://jgst.issge.ir/article-1-348-en.html"> Assessing the Attribute Accuracy of Volunteered Geographic Information</a>. Journal of Geomatics Science and Technology, 5(3), 49-64.
-              </li>
-              <li>
-                Vahedi, B., Alesheikh, A. A., &#38; Honarparvar, S. (2014). <a href="http://jgst.issge.ir/browse.php?a_id=165&sid=1&slc_lang=en&ppup=0">Quantitative Assessment of Pragmatic Quality of Volunteered Geographic Information Using Fuzzy Linguistic Quantifiers and OWA Operator</a>. Journal of Geomatics Science and Technology, 3(4), 65-76.
-              </li>
-            </ul>
-          </div>
-          <h3 class="w3-text-blue">Conference Presentations</h3>
-            <div>
-              <ul>
-
-                <li>
-                  Revisiting the Notion of “Continuous Fields”, Association of American Geographers (AAG) Annual Meeting, April 2017, Boston.
-                </li>
-                <li>
-                  Exploring the Notion of Spatial Data Lenses. Ninth International Conference on Geographic Information Science (GIScience 2016), September 2016, Montreal, Canada.
-                </li>
-                <li>
-                  Question Based Spatial Computing, 19th AGILE International Conference on Geographic Information Science, June 2016, Helsinki, Finland.
-                </li>
-                <li>
-                  Assessing the quality of VGI data, 21st National Geomatics Conference, February 2013, Tehran, Iran.
-                </li>
-              </ul>
+<!-- HEADER -->
+<header>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top navbar-inverse">
+        <div class="container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="img/Geography-Logo.gif" alt="bestAG"/></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-0 ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Education & Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
-
-            <!-- End research Section -->
-          </div>
-
-
-          <!-- Projects Section -->
-          <div class="w3-padding-64 w3-content" id="projects">
-            <h2 class="w3-text-blue">My Projects</h2>
-            <hr style="width:200px" class="w3-opacity">
-
-              <div class="behzad-row">
-              <div class="behzad-col-sm-4">
-                <h4 class="w3-center" >GauchoSafe Android App</h4>
-                <center><img src="images/GauchoSafe.png" style="width:50%; height: 50%" class="w3-center img-thumbnail" alt="GauchoSafe App"></center>
-                <p>
-                  This project exploit the potential of smartphones as sensors to report crimes or snese of unsafety for UCSB students. Users of the app can enable it
-                  when they feel unsafe, and the app will report their location anonymously to campus officials or UCSB police department. In case of a danger, users can shake their phone,
-                  and it will send their location and contact information directly to the police. The location data submitted by users are used to create a heat map of the locations where are felt to be more unsafe.
-                </p>
-                <p>
-                  Technology Stack: Android, Google Maps Api
-                </p>
-              </div>
-              <div class="behzad-col-sm-4">
-                <h4 class="w3-center">GauchoSafe Web Interface</h4>
-                <img src="images/GauchoSafe-web.png"  style="width:100%" class="img-thumbnail" alt="GauchoSafe Web">
-                <p>
-                  This project is a web interface for GauchoSafe app. It provides a heatmap of the locations reported by app users, and police officials can see a detailed report
-                  of the locations and also emergency location reports by logging in the website.
-                </p>
-                <p>
-                  Technology Stack: HTML, JavaScript, PHP, Leaflet.js
-                </p>
-              </div>
-            </div>
-
-            <div class="behzad-row">
-              <div class="behzad-col-sm-4">
-                <h4 class="w3-center w3-text-blue"><a href="https://github.com/spatial-ucsb/ConceptsOfSpatialInformation">Core Concepts of Spatial Information</a></h4>
-                <img src="images/coreConcepts.png" style="width:100%" class="img-thumbnail" alt="coreConcepts">
-                <p>
-                  The <a href="http://spatial.ucsb.edu/core-concepts-of-spatial-information/">Core Concepts of Spatial Information</a> are designed to facilitate spatial computing and reduce its complexity. They also serve as conceptual lenses on environments, allowing for different perspectives on them, fed by data with any sort of spatial reference. We specify the Core Concepts as Abstract Data Types (ADT), defining a set of core computations for each concept, through which users can ask spatial questions (Kuhn &#38; Ballatore, 2015). The ultimate goal is a generic Application Programming Interface (API) for spatial computing.
-                </p>
-              </div>
-
-              <div class="behzad-col-sm-4">
-                <h4 class="w3-center w3-text-blue">Earthquake Explorer</h4>
-                <img src="images/earthquake.png" style="width:100%" class="img-thumbnail" alt="Earthquake">
-                <p>
-                  The Earthquake Explorer app is an event-based interface that offers users a single point-of-entry for access to USGS Earthquakes Hazards Program data as they become available in near-real time. Users can view and get information about earthquake events by time and magnitude. Queries based on spatial extent, defined by place-name or bounding box, can be applied to the data. Summary reports are generated for all earthquake events, along with the selected events in the user-defined area of interest, and are available for export.
-                  <p>
-                     Technology Stack: Java, GeoJSON, OSM.
-                  </p>
-                </p>
-              </div>
-
-            </div>
-
-
-            <!-- End Project Section -->
-          </div>
-
-
-
-          <!-- Contact Section -->
-          <div class="w3-padding-64 w3-content w3-text-blue" id="contact" style="clear: both;">
-            <h2 class="w3-text-blue">Contact Me</h2>
-            <hr style="width:200px" class="w3-opacity">
-
-            <div class="w3-section">
-              <p><i class="fa fa-map-marker fa-fw w3-text-black w3-xxlarge w3-margin-right"></i> 5704 Ellison Hall, University of California Santa Barbara, Santa Barbara, US.</p>
-              <p><i class="fa fa-phone fa-fw w3-text-black w3-xxlarge w3-margin-right"></i> Phone: 805 8867106</p>
-              <p><i class="fa fa-envelope fa-fw w3-text-black w3-xxlarge w3-margin-right"> </i> Email: <a href="mailto:behzad@geog.ucsb.edu">behzad@geog.ucsb.edu</a></p>
-            </div><br>
-
-            <!-- End Contact Section -->
-          </div>
-
-          <!-- Footer -->
-          <footer class="w3-center w3-content w3-padding-64 w3-text-blue w3-xlarge">
-            <a href="https://www.linkedin.com/in/behzad-vahedi-78b6538a/"><i class="w3-xxlarge fa fa-linkedin w3-hover-opacity"></i></a>
-            <a href="https://github.com/behzad-vahedi"><i class="w3-xxlarge fa fa-github w3-hover-opacity"></i></a>
-            <a href="https://scholar.google.com/citations?user=9VaUldkAAAAJ&hl=en&oi=ao"><i class="w3-xxlarge fa fa-google w3-hover-opacity"></i></a>
-            <a href="https://twitter.com/behzadSB69"><i class="w3-xxlarge fa fa-twitter w3-hover-opacity"></i></a><br>
-            <a href="https://www.ucsb.edu/"><img src="images/ucsb-wordmark-blk.svg" class="w3-image" width="20%" height="10%"></a>
-            <p class="w3-small">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a> <br>&#9400; 2017 Behzad Vahedi</p>
-            <!-- End footer -->
-          </footer>
-
-          <!-- END PAGE CONTENT -->
         </div>
+    </nav>
+</header>
+<!-- HEADER END -->
 
-      </body>
-      </html>
+<div id="content-wrap">
+
+    <!-- HERO AREA -->
+    <div class="jumbotron" id="#hero" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+      <div id="mapCover1"></div>
+      <div id="map"></div>
+        <canvas id="effect-js"></canvas>
+        <div id="particles-js"></div>
+
+        <div id="bg-video-wrap">
+            <video id="bg-video" playsinline autoplay muted loop>
+            </video>
+        </div>
+        <div class="container">
+            <h1>Behzad Vahedi</h1>
+            <span class="typed"></span>
+            <div class="typed-wrap"></div>
+			<a href="#portfolio" class="btn btn-primary portfolio-link scroll-link">See my portfolio</a>
+        </div>
+    </div>
+    <!-- HERO AREA END -->
+
+    <!-- bouncing arrow -->
+    <div class="arrow-wrap">
+        <a href="#about" class="arrow down-bounce scroll-link fa fa-angle-double-down"></a>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12">
+                    <div class="photo-wrap">
+                        <img src="img/photo.jpg" class="photo" alt=""/>
+                        <div class="photo-overlay">
+                            <div class="photo-text social">
+                                <a href="https://www.linkedin.com/in/behzad-vahedi-78b6538a/"><i class="fa fa-linkedin"></i></a>
+                                <a href="https://github.com/behzad-vahedi"><i class="fa fa-github"></i></a>
+                                <a href="https://scholar.google.com/citations?user=9VaUldkAAAAJ&hl=en&oi=ao"><i class="fa fa-google"></i></a>
+                                <a href="https://www.facebook.com/behzad.vahedi"><i class="fa fa-facebook"></i></a>
+                                <a href="https://twitter.com/behzadSB69"><i class="fa fa-twitter"></i></a>
+                                <!-- <a href="#"><i class="fa fa-instagram"></i></a> -->
+                                <!-- <a href="#"><i class="fa fa-youtube"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="aboutRight" class="col-lg-6 col-12">
+                    <div>
+                        <!-- <h4>Hello! I am Behzad</h4> -->
+                        <h2>ABOUT ME</h2>
+                    </div>
+                    <div>
+                        <p>
+                            Behzad Vahedi is a GIScientist with engineering background and experience in GIS development.
+                            He is a PhD student in GIScience at University of California Santa Barbara.
+                            As a graduate student researcher, he work in Center for Spatial Studies at UCSB.
+                            Behzad holds a bachelor degree in Geodesy and Geomatics Engineering, and a Master
+                            of Science degree in GIS engineering, both from K.N.Toosi University of Technology, Tehran, Iran.
+                        </p>
+                        <p>
+                            At UCSB Geography, he studies how to ask and answer spatio-temporal questions under supervision
+                            of Professor Werner Kuhn, and his goal is to facilitate Question-Based Spqtial Computing.
+                            His focus is on Field as a Core Concept of Spatial Information and he develops Core Computations
+                            on fields by extending Map Algebra operations from rastre to field. He is always passionate
+                            to develop GIS services and software, provide GIS solutions, and to work on challenging and
+                            real world spatial problems.
+                        </p>
+                        <p>
+                          If you want to know more about the projects he has done, check his Github,
+                          and feel free to send him an email if you want to contact.
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-6 social">
+                        <p class="pull-right">
+                          <a href="https://www.linkedin.com/in/behzad-vahedi-78b6538a/"><i class="fa fa-linkedin"></i></a>
+                          <a href="https://github.com/behzad-vahedi"><i class="fa fa-github"></i></a>
+                          <a href="https://scholar.google.com/citations?user=9VaUldkAAAAJ&hl=en&oi=ao"><i class="fa fa-google"></i></a>
+                          <a href="https://www.facebook.com/behzad.vahedi"><i class="fa fa-facebook"></i></a>
+                          <a href="https://twitter.com/behzadSB69"><i class="fa fa-twitter"></i></a>
+                        </p>
+                    </div>
+
+
+                    <!-- Add Skillbar if you want -->
+
+                    <!-- <div id="skillbar-wrap">
+                      <div class="skillbar" data-percent="95">
+                        <p class="skillbar-bar"></p>
+                        <span class="skillbar-title">HTML, CSS</span>
+                      </div>
+                      <div class="skillbar" data-percent="70">
+                        <p class="skillbar-bar"></p>
+                        <span class="skillbar-title">Javascript</span>
+                      </div>
+                      <div class="skillbar" data-percent="70">
+                        <p class="skillbar-bar"></p>
+                        <span class="skillbar-title">PHP, MySQL</span>
+                      </div>
+                      <div class="skillbar" data-percent="60">
+                        <p class="skillbar-bar"></p>
+                        <span class="skillbar-title">Photoshop</span>
+                      </div>
+                      <div class="skillbar" data-percent="100">
+                        <p class="skillbar-bar"></p>
+                        <span class="skillbar-title">Coffee making</span>
+                      </div> -->
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ABOUT END -->
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="section-header">
+            <div>
+                <h2>My Skills and Interests</h2>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <!-- <div class="box"> -->
+                        <div class="box animation" data-animation="bounceInUp">
+                            <div class="circle"><i class="fa fa-globe"></i></div>
+                            <h3>GIS Development</h3>
+                            <p>With a masters degree in GIS engineering, I am always interested to develop applications with spatial data.</p></br></br>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="box animation" data-animation="bounceInUp">
+                        <!-- <div class="box"> -->
+                            <div class="circle"><i class="fa fa-code"></i></div>
+                            <h3>Coding</h3>
+                            <p>Coding cheers me up after a long day of work and keeps me awake for hours. My prefered coding language is Java.</p></br></br>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="box animation" data-animation="bounceInUp">
+                        <!-- <div class="box"> -->
+                            <div class="circle"><i class="fa fa-database"></i></div>
+                            <h3>Spatial Data Science</h3>
+                            <p>In the era of Big Data, spatial data are generated at an unprecedented rate. I am interestd in applying data science techniques to spatial data and create insight from the data.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="box animation" data-animation="bounceInUp">
+                        <!-- <div class="box"> -->
+                            <div class="circle"><i class="fa fa-camera"></i></div>
+                            <h3>Photography</h3>
+                            <p>In my free time, I like to photograph, play soccer, volleyball, or board games, or just read.</p></br></br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SERVICES END -->
+
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+          <div class="section-header">
+            <div>
+              <h2>Education and Experience</h2>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col section-header">
+                <h4>Education</h4>
+              </div>
+              <div class="col section-header">
+                <h4>Experience</h4>
+              </div>
+            </div>
+
+            <div class="row timeline-row">
+              <div class="col">
+                <div class="timeline-block timeline-block-left">
+                  <!-- <div class="marker-left"></div> -->
+                  <div class="timeline-content">
+                    <h3>PhD | Geographical Information Science</h3>
+                    <span>2015 - present</span>
+                    <p>University of California Santa Barbara</br>
+                      Advisor: Professor <a href="http://geog.ucsb.edu/~kuhn/"> Werner Kuhn</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="timeline-block timeline-block-right">
+                  <!-- <div class="marker-right"></div> -->
+                  <div class="timeline-content">
+                    <h3>Graduate Student Researcher</h3>
+                    <span>University of California Santa Barbara</span></br>
+                    <span>2015 - present</span>
+                    <p>
+                      Big spatial data modelling and analysis (computation)</br>
+                      Natural Language Processing of spatial queries</br>
+                      Research on "Core Concepts and Computations of Spatial Information"</br>
+                      Algebraic specification and functional implementation of spatial core concepts</br>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row timeline-row">
+              <div class="col">
+                <div class="timeline-block timeline-block-left">
+                    <!-- <div class="marker-left"></div> -->
+                    <div class="timeline-content">
+                        <h3>Master of Science (M.Sc.) | Geospatial Information Systems (GIS) Engineering</h3>
+                        <span>2012 - 2015</span>
+                        <p>
+                          K.N.Toosi University of technology, Tehran, Iran</br>
+                          My master's program was heavily focoused on GIS, and offered courses in all areas of GIS. Fundamentals of GIS, Spatial Data Infrastructure, Mobile GIS And Location-based Computing, and Data Management are among the important courses I took in that program. I had the opportunity to do projects in all these fields, and conducted my Master's thesis research on <i>Automatic assessment of VGI data quality</i>.
+                        </p>
+                    </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="timeline-block timeline-block-right">
+                    <!-- <div class="marker-right"></div> -->
+                    <div class="timeline-content">
+                        <h3>GIS Developer and Engineer</h3>
+                        <span>Naghshara Consulting Engineers</span></br>
+                        <span>2014 - 2015</span>
+                        <p>
+                          Designing Data model and database structure</br>
+                          Design and implementation of spatial databases</br>
+                          Producing specialized maps for different applications
+                        </p>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row timeline-row">
+                <div class="col">
+                  <div class="timeline-block timeline-block-left">
+                      <!-- <div class="marker-left"></div> -->
+                      <div class="timeline-content">
+                          <h3>Bachelor of Science (B.Sc.) | Geodesy and Geomatics Engineering</h3>
+                          <span>2008 - 2012</span>
+                          <p>
+                            K.N.Toosi University of technology, Tehran, Iran</br>
+                            This program is a combination of Land Surveying, Geodesy, Photogrammetry, Remote Sensing, and GIS. I took courses in all these subdesciplines and that's when I became interested in GIS.
+                          </p>
+                      </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="timeline-block timeline-block-right">
+                      <!-- <div class="marker-right"></div> -->
+                      <div class="timeline-content">
+                          <h3>GIS and CAD Specialist</h3>
+                          <span>Zist Boom Hendesi (ZBH) Co.</span></br>
+                          <span>April 2012 - September 2012</span>
+                          <p>
+                            Development and implementation of GIS Applications in Arc Object</br>
+                            Developing AutoCAD tools
+                          </p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </section>
+        <!-- EXPERIENCE END -->
+
+        <!-- EXPERIENCE -->
+
+        <!-- EXPERIENCE END -->
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="100">
+            <div class="section-header">
+                <div>
+                    <h2>Publications</h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div id="testimonials-content" class="col-12">
+                        <div class="gallery-cell">
+                            <div class="testimonial">
+                                <!-- <img class="testimonial-avatar"
+                                     src="img/client1.jpg" alt=""> -->
+
+                                     <q class="testimonial-quote">
+                                       Vahedi, B., Kuhn, W., &#38; Ballatore, A. (2016). <a href="https://link.springer.com/chapter/10.1007/978-3-319-33783-8_3">Question-based spatial computing—A case study</a>.
+                                     </q>
+                                     <span class="testimonial-author"> Geospatial Data in a Changing World (pp. 37-50). Springer International Publishing.</span>
+                                     <div class="testimonial-author"><p><i>Abstract:</i> Geographic Information Systems (GIS) support spatial problem solving by large repositories of procedures, which are mainly operating on map layers. These procedures and their parameters are often not easy to understand and use, especially not for domain experts without extensive GIS training ...</p> </div>
+                            </div>
+                        </div>
+                        <div class="gallery-cell">
+                            <div class="testimonial">
+                                <!-- <img class="testimonial-avatar"
+                                     src="img/client2.jpg" alt=""> -->
+                                     <q class="testimonial-quote">
+                                       Allen, C., Hervey, T., Lafia, S., Phillips, D. W., Vahedi, B., &#38; Kuhn, W. (2016).<a href="http://link.springer.com/chapter/10.1007/978-3-319-45738-3_17"> Exploring the Notion of Spatial Lenses</a>.
+                                     </q>
+                                     <span class="testimonial-author"> International Conference on Geographic Information Science (pp. 259-274). Springer International Publishing.</span>
+                                <div class="testimonial-author"><p><i>Abstract:</i> The theory underlying these lenses is that of core concepts of spatial information, but here we exploit how these concepts enhance the usability of data rather than that of systems. Spatial lenses also supply transformations between multiple views of an environment, for example, between field and object views ... </p> </div>
+                            </div>
+                        </div>
+                        <div class="gallery-cell">
+                            <div class="testimonial">
+                                <!-- <img class="testimonial-avatar"
+                                     src="img/client3.jpg" alt=""> -->
+                                     <q class="testimonial-quote">
+                                       Vahedi, B., &#38; Alesheikh, A. A. (2016).<a href="http://jgst.issge.ir/article-1-348-en.html"> Assessing the Attribute Accuracy of Volunteered Geographic Information</a>.
+                                     </q>
+                                     <span class="testimonial-author"> Journal of Geomatics Science and Technology, 5(3), 49-64.</span>
+                                <div class="testimonial-author"><p><i>Abstract:</i> In this study, using a novel method and by leveraging Levenshtein algorithm along with text pre-processing, attribute accuracy of volunteered geographic features is examined, comparing this data with reference data. Levenshtein algorithm calculates the difference between two strings of text by counting the ... </p> </div>
+                            </div>
+                        </div>
+                        <div class="gallery-cell">
+                            <div class="testimonial">
+                                <!-- <img class="testimonial-avatar"
+                                     src="img/client3.jpg" alt=""> -->
+                                     <q class="testimonial-quote">
+                                       Vahedi, B., Alesheikh, A. A., &#38; Honarparvar, S. (2014). <a href="http://jgst.issge.ir/browse.php?a_id=165&sid=1&slc_lang=en&ppup=0">Quantitative Assessment of Pragmatic Quality of Volunteered Geographic Information Using Fuzzy Linguistic Quantifiers and OWA Operator</a>.
+                                     </q>
+                                     <span class="testimonial-author"> Journal of Geomatics Science and Technology, 3(4), 65-76.</span>
+                                <div class="testimonial-author"><p><i>Abstract:</i>  Despite its significance, pragmatic quality of Volunteered Geogra Information has usually been ignored . This paper proposes a method for assessing pragmatic quality of VGI based on linguistic quantifiers and OWA operator. In this method, to assess the pragmatic quality, first internal and external quality of volunteered data should be assessed ... </p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- TESTIMONIALS END -->
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+        <div class="section-header">
+            <div>
+                <h2>My Projects</h2>
+            </div>
+        </div>
+        <div class="container">
+             <div id="filters-group">
+                <a class="filter" data-filter="*">show all</a>
+                <a class="filter" data-filter=".plugins">GIS</a>
+                <a class="filter" data-filter=".design">development</a>
+                <a class="filter" data-filter=".photography">photography</a>
+            </div>
+            <div id="portfolio-items" class="row">
+                <div class="item col-md-6 col-lg-4 photography" data-category="photography">
+                    <a title="This project exploit the potential of smartphones as sensors to report crimes or snese of unsafety for UCSB students. Users of the app can enable it
+                    when they feel unsafe, and the app will report their location anonymously to campus officials or UCSB police department. In case of a danger, users can shake their phone,
+                    and it will send their location and contact information directly to the police. The location data submitted by users are used to create a heat map of the locations where are felt to be more unsafe. <a href='#'>Read More</a>."
+                       data-rel="prettyPhoto"
+                       href="img/GauchoSafe1.png">
+                        <div class="item-wrap">
+                            <img class="img-fluid" src="img/GauchoSafe1.png" alt="GauchoSafe Android App">
+                        </div>
+                        <span class="magnifier"></span>
+                    </a>
+                </div>
+                <div class="item col-md-6 col-lg-4 plugins design" data-category="plugins, design">
+                    <a title="Custom description with a <a href='#'>URL</a>."
+                       data-rel="prettyPhoto"
+                       href="img/portfolio/portfolio2.jpg">
+                        <div class="item-wrap">
+                            <img class="img-fluid" src="img/portfolio/portfolio2.jpg" alt="WordPress Plugin">
+                        </div>
+                        <span class="magnifier"></span>
+                    </a>
+                </div>
+                <div class="item col-md-6 col-lg-4 plugins photography" data-category="plugins, photography">
+                    <a title="Custom description with a <a href='#'>URL</a>."
+                       data-rel="prettyPhoto"
+                       href="img/portfolio/portfolio3.jpg">
+                        <div class="item-wrap">
+                            <img class="img-fluid" src="img/portfolio/portfolio3.jpg" alt="Photography">
+                        </div>
+                        <span class="magnifier"></span>
+                    </a>
+                </div>
+                <div class="item col-md-6 col-lg-4 col-12 plugins" data-category="plugins">
+                    <a title="Custom description with a <a href='#'>URL</a>."
+                       data-rel="prettyPhoto"
+                       href="img/portfolio/portfolio4.jpg">
+                        <div class="item-wrap">
+                            <img class="img-fluid" src="img/portfolio/portfolio4.jpg" alt="jQuery Plugin">
+                        </div>
+                        <span class="magnifier"></span>
+                    </a>
+                </div>
+                <div class="item col-md-6 col-lg-4 col-12 design" data-category="design">
+                    <a title="Custom description with a <a href='#'>URL</a>."
+                       data-rel="prettyPhoto"
+                       href="img/portfolio/portfolio5.jpg">
+                        <div class="item-wrap">
+                            <img class="img-fluid" src="img/portfolio/portfolio5.jpg" alt="Design">
+                        </div>
+                        <span class="magnifier"></span>
+                    </a>
+                </div>
+                <div class="item col-md-6 col-lg-4 col-12 plugins design" data-category="plugins, design">
+                    <a title="Custom description with a <a href='#'>URL</a>."
+                       data-rel="prettyPhoto"
+                       href="img/portfolio/portfolio6.jpg">
+                        <div class="item-wrap">
+                            <img class="img-fluid" src="img/portfolio/portfolio6.jpg" alt="Design">
+                        </div>
+                        <span class="magnifier"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PORTFOLIO END -->
+
+    <!-- HIRE ME -->
+    <section id="hireme" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
+        <div class="section-header container">
+            <div class="col-12">
+                <h2 class="animation" data-animation="fadeInLeft">Do you have an interesting project?</h2>
+				<h4 class="animation" data-animation="fadeInLeft">I am always interested in new projects related to big data and spatial computing, particularly in creating maps for different applications, big spatial data analysis, spatial modelling, and web development. Do not hesitate to contact me if you have an interesting research or development project. </h4>
+                <a data-animation="fadeInRight" class="btn btn-primary scroll-link animation" href="#contact">Contact
+                    me!</a>
+            </div>
+        </div>
+    </section>
+    <!-- HIRE ME END -->
+
+    <!-- BLOG / NEWS -->
+    <section id="blog">
+        <div class="section-header">
+            <div>
+                <h2>Watch my Blog</h2>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4 item">
+                    <img src="img/blog/blog1.jpg" class="img-fluid" alt=""/>
+                    <h4>Donec hendrerit ultricies orci eget pretium</h4>
+                    <p>
+                        Vivamus a mattis augue. Suspendisse aliquam justo in nibh hendrerit lobortis. Proin euismod nisl sem, ac rhoncus ex lacinia nec.
+                        Aliquam bibendum vel dui eu tincidunt...
+                    </p>
+                    <a href="#" class="btn btn-secondary">Read more...</a>
+                </div>
+                <div class="col-12 col-lg-4 item">
+                    <img src="img/blog/blog2.jpg" class="img-fluid" alt=""/>
+                    <h4>Donec hendrerit ultricies orci eget pretium</h4>
+                    <p>
+                        Vivamus a mattis augue. Suspendisse aliquam justo in nibh hendrerit lobortis. Proin euismod nisl sem, ac rhoncus ex lacinia nec.
+                        Aliquam bibendum vel dui eu tincidunt...
+                    </p>
+                    <a href="#" class="btn btn-secondary">Read more...</a>
+                </div>
+                <div class="col-12 col-lg-4 item">
+                    <img src="img/blog/blog3.jpg" class="img-fluid" alt=""/>
+                    <h4>Donec hendrerit ultricies orci eget pretium</h4>
+                    <p>
+                        Vivamus a mattis augue. Suspendisse aliquam justo in nibh hendrerit lobortis. Proin euismod nisl sem, ac rhoncus ex lacinia nec.
+                        Aliquam bibendum vel dui eu tincidunt...
+                    </p>
+                    <a href="#" class="btn btn-secondary">Read more...</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BLOG / NEWS END -->
+
+    <!-- CONTACT FORM  -->
+    <section id="contact">
+        <div class="section-header">
+            <div>
+                <h2>Contact Me</h2>
+                <p>Please fill the form below. I will contact you as soon as possible.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div id="form-messages"></div>
+            <div class="form-wrap">
+                <form id="contact-form" action="api/contact.php" method="post" autocomplete="off">
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <input class="form-control" type="text" placeholder="Your Name" name="name" id="name"
+                                   required/>
+                            <input class="form-control" type="text" placeholder="E-mail" name="email" id="email"
+                                   required/>
+                            <input class="form-control" type="text" placeholder="Subject" name="subject" id="subject"
+                                   required/>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <textarea class="form-control" placeholder="Your Message" rows="7" name="message"
+                                      id="message" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="submit">SEND MESSAGE</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="ajaxLoad"></div>
+            </div>
+        </div>
+    </section>
+    <!-- CONTACT FORM  END -->
+</div>
+
+<div id="footer-wrap">
+
+    <!-- CONTACT INFO  -->
+    <div id="contact2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" id="googleMap"></div>
+            </div>
+            <div class="row withMap">
+                <div class="col-12 col-md-8">
+                    <p>Here is where I am located at the beautiful campus of UCSB. The best way to contact me is via e-mail, but if you are around, I am always down for a cup of coffe and a fun disscussion.
+                    </p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div>
+                        <i class="fa fa-map-marker"> </i>5704 Ellison Hall, University of California, Santa Barbara. </br>
+                                                          Santa Barbara, CA 93106, USA
+                    </div>
+                    <div>
+                        <i class="fa fa-phone"> </i>805-8867106
+                    </div>
+                    <div>
+                        <!-- <i class="fa fa-envelope"> </i>behzad@ucsb.edu -->
+                        <a href="mailto:behzad@ucab.edu" target="_top"><i class="fa fa-envelope"> </i>behzad@ucsb.edu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CONTACT INFO END -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <p>Copyright &copy; 2018 Behzad Vahedi</p>
+                </div>
+                <div class="col-12 col-sm-6 social">
+                    <p class="pull-right">
+                      <a href="https://www.linkedin.com/in/behzad-vahedi-78b6538a/"><i class="fa fa-linkedin"></i></a>
+                      <a href="https://github.com/behzad-vahedi"><i class="fa fa-github"></i></a>
+                      <a href="https://scholar.google.com/citations?user=9VaUldkAAAAJ&hl=en&oi=ao"><i class="fa fa-google"></i></a>
+                      <a href="https://www.facebook.com/behzad.vahedi"><i class="fa fa-facebook"></i></a>
+                      <a href="https://twitter.com/behzadSB69"><i class="fa fa-twitter"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER END -->
+
+</div>
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.0.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/flickity.pkgd.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/jquery.debouncedresize.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/typed.min.js"></script>
+<script src="js/skill.bars.jquery.js"></script>
+<script src="js/particles.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/custom.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMYUCUdT1WkZJFkrpI4IzEObG8_YNcZPg&callback=myMap"></script>
+
+</body>
+</html>
