@@ -19,10 +19,6 @@
     <!-- site title -->
     <title>Behzad Vahedi | Personal Website</title>
 
-    <!-- Leaflet -->
-    <link rel="stylesheet" href="css/leaflet.css" />
-
-
     <!-- favicons using http://realfavicongenerator.net/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32">
@@ -58,8 +54,9 @@
     <!-- Modernizr -->
     <script src="js/modernizr-custom.js"></script>
 
-    <!-- Leaflet Map -->
-    <script language="javascript" type="text/javascript" src="js/map.js"></script>
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="css/leaflet.css" />
+
 
 </head>
 
@@ -109,8 +106,6 @@
 
     <!-- HERO AREA -->
     <div class="jumbotron" id="#hero" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="0">
-      <div id="mapCover1"></div>
-      <div id="map"></div>
         <canvas id="effect-js"></canvas>
         <div id="particles-js"></div>
 
@@ -124,6 +119,8 @@
             <div class="typed-wrap"></div>
 			<a href="#portfolio" class="btn btn-primary portfolio-link scroll-link">See my portfolio</a>
         </div>
+        <div id="mapCover1"></div>
+        <div id="map"></div>
     </div>
     <!-- HERO AREA END -->
 
@@ -296,7 +293,7 @@
                     <h3>PhD | Geographical Information Science</h3>
                     <span>2015 - present</span>
                     <p>University of California Santa Barbara</br>
-                      Advisor: Professor <a href="http://geog.ucsb.edu/~kuhn/"> Werner Kuhn</a>
+                      Advisor: Professor <a href="https://geog.ucsb.edu/~kuhn/"> Werner Kuhn</a>
                     </p>
                   </div>
                 </div>
@@ -696,5 +693,6 @@
 <script src="js/custom.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMYUCUdT1WkZJFkrpI4IzEObG8_YNcZPg&callback=myMap"></script>
 <script src="js/leaflet.js"></script>
+<script language="javascript" type="text/javascript" src="js/map.js"></script>
 </body>
 </html>
