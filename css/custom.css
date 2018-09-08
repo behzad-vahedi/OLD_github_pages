@@ -565,6 +565,17 @@ div#mapCover1 {
     color: #fffc00;
 }
 
+.photo-text .ai, .photo-text .ai:visited, .photo-text .ai:active, .photo-text .ai:focus {
+    color: #fff;
+    margin: auto 5px;
+	width: 2rem;
+	font-size: 2rem;
+}
+
+.photo-text .ai:hover {
+    color: #fffc00;
+}
+
 .photo-overlay {
     position: absolute;
     bottom: 0;
